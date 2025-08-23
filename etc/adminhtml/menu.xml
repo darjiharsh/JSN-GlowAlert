@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="JSN_GlowAlert::menu" 
+             title="JSN GlowAlert" 
+             module="JSN_GlowAlert" 
+             sortOrder="50"
+             resource="JSN_GlowAlert::menu" />
+
+        <add id="JSN_GlowAlert::config_menu" 
+             title="Configuration" 
+             module="JSN_GlowAlert" 
+             sortOrder="10" 
+             parent="JSN_GlowAlert::menu" 
+             action="adminhtml/system_config/edit/section/jsn_glowalert" 
+             resource="JSN_GlowAlert::config_menu"/>
+    </menu>
+</config>

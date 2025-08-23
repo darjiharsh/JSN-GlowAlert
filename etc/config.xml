@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <jsn_glowalert>
+            <general>
+                <enable>1</enable>
+                <alert_locations>
+                    <item>add_to_cart</item>
+                    <item>minicart</item>
+                </alert_locations>
+            </general>
+        </jsn_glowalert>
+    </default>
+</config>
