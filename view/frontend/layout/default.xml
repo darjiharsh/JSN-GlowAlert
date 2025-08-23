@@ -6,9 +6,11 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template"
-                   name="jsn.glowalert.button"
-                   template="JSN_GlowAlert::button.phtml"/>
+            <block
+                ifconfig="jsn_glowalert/general/enable"
+                class="Magento\Framework\View\Element\Template"
+                name="jsn.glowalert.button"
+                template="JSN_GlowAlert::button.phtml"/>
         </referenceContainer>
     </body>
 </page>
