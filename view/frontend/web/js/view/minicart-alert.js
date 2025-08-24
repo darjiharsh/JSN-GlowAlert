@@ -43,6 +43,10 @@ define([
             showLoaderOnConfirm: true,
             preConfirm: function () {
                 return new Promise(function (resolve, reject) {
+                    var timeout = setTimeout(function() {
+                        reject('Request timeout');
+                    }, 3000);
+
                     $.ajax({
                         url: urlBuilder.build('checkout/cart/delete'),
                         type: 'POST',
@@ -51,9 +55,11 @@ define([
                             form_key: formKey
                         },
                         success: function (response) {
+                            clearTimeout(timeout);
                             resolve(response);
                         },
                         error: function (xhr, status, error) {
+                            clearTimeout(timeout);
                             reject(error || 'AJAX error');
                         },
                         complete: function () {
@@ -61,6 +67,9 @@ define([
                         }
                     });
                 });
+            },
+            allowOutsideClick: function () {
+                return !Swal.isLoading();
             }
         }).then(function (result) {
             if (result.isConfirmed) {
@@ -72,7 +81,7 @@ define([
                 });
             }
         }).catch(function (error) {
-            Swal.fire('Error!', typeof error === 'string' ? error : 'Failed to remove item', 'error');
+                Swal.fire('Error!', typeof error === 'string' ? error : 'Failed to remove item', 'error');
         });
     }
 
