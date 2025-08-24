@@ -1,6 +1,30 @@
-<button id="alert-button">Click Me</button>
+<?php
+/** @var \JSN\GlowAlert\Helper\Data $helper */
+$helper = $this->helper('JSN\GlowAlert\Helper\Data');
+$alertLocations = $helper->getAlertLocations();
+?>
 
-<script type="text/x-magento-init">
+<?php if (in_array('add_to_cart', $alertLocations)): ?>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "cartAlert": {}
+            }
+        }
+    </script>
+<?php endif; ?>
+
+<?php if (in_array('minicart', $alertLocations)): ?>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "minicartAlert": {}
+            }
+        }
+    </script>
+<?php endif; ?>
+
+<!-- <button id="alert-button">Click Me</button>
 {
     "*": {
         "glowAlert": {},
@@ -8,4 +32,4 @@
         "minicartAlert": {}
     }
 }
-</script>
+</script> -->
