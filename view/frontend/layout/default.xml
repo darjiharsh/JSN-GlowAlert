@@ -10,7 +10,7 @@
                 ifconfig="jsn_glowalert/general/enable"
                 class="Magento\Framework\View\Element\Template"
                 name="jsn.glowalert.button"
-                template="JSN_GlowAlert::button.phtml"/>
+                template="JSN_GlowAlert::sweet_alert.phtml"/>
         </referenceContainer>
     </body>
 </page>
