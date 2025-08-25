@@ -16,6 +16,7 @@ This custom Magento 2 extension enhances the default user experience by replacin
 ```
 composer require jsn/glowalert
 bin/magento setup:upgrade
+bin/magento setup:di:compile
 bin/magento setup:static-content:deploy
 bin/magento cache:flush
 ```
