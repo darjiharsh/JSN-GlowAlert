@@ -45,7 +45,7 @@ define([
                 return new Promise(function (resolve, reject) {
                     var timeout = setTimeout(function() {
                         reject('Request timeout');
-                    }, 3000);
+                    }, 5000);
 
                     $.ajax({
                         url: urlBuilder.build('checkout/cart/delete'),
